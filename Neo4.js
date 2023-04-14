@@ -235,6 +235,8 @@ var Neo4 = {
         const tmp15 = (mx2*(my3*mw1-mw3*my1)-my2*(mx3*mw1-mw3*mx1)+mw2*(mx3*my1-my3*mx1));
         const tmp16 = (mx2*(my3*mz1-mz3*my1)-my2*(mx3*mz1-mz3*mx1)+mz2*(mx3*my1-my3*mx1));
 
+        if(det == 0){return false}; // in case matrix is not invertible
+        
         // get 1/d
         const dInv = 1.0 / det;
         invMat =  invMat || this.construct();
